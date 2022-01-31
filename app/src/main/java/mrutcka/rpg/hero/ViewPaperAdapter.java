@@ -18,6 +18,7 @@ class ViewPaperAdapter extends PagerAdapter {
     int[] images;
     int pos;
     ImageView imageView;
+    View itemView;
 
 
     LayoutInflater mLayoutInflater;
@@ -39,12 +40,14 @@ class ViewPaperAdapter extends PagerAdapter {
 
     @NonNull
     @Override
-    public Object instantiateItem(@NonNull ViewGroup container, final int position) {
-        View itemView = mLayoutInflater.inflate(R.layout.item, container, false);
+    public Object instantiateItem(@NonNull ViewGroup container, int position) {
+        itemView = mLayoutInflater.inflate(R.layout.item, container, false);
 
         imageView = (ImageView) itemView.findViewById(R.id.imageViewMain);
 
         imageView.setImageResource(images[position]);
+
+        pos = position;
 
         Objects.requireNonNull(container).addView(itemView);
 

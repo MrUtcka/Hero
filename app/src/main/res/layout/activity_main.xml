@@ -16,18 +16,6 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="invisible"
-        android:src="@drawable/pinguino"/>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="139dp"
-        android:layout_height="73dp"
-        android:text="TextView" />
-
-    <FrameLayout
-        android:id="@+id/f"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
+        android:visibility="invisible" />
 
 </RelativeLayout>

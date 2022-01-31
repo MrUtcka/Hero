@@ -20,13 +20,19 @@ public class Hero extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hero_content);
 
+        ImageView a = (ImageView) findViewById(R.id.imageView1);
+        TextView b = (TextView) findViewById(R.id.textView2);
+
         if(getIntent().hasExtra("byteArray")) {
-            ImageView imageView = new ImageView(this);
             Bitmap bit = BitmapFactory.decodeByteArray(
                     getIntent().getByteArrayExtra("byteArray"), 0, getIntent().getByteArrayExtra("byteArray").length);
-            imageView.setImageBitmap(bit);
+            a.setImageBitmap(bit);
         }
 
+        if(getIntent().hasExtra("story")) {
+            String story = getIntent().getStringExtra("story");
+            b.setText(story);
+        }
 
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(this);
